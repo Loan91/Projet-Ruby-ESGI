@@ -1,0 +1,28 @@
+<%= form_with(model: film, local: true) do |form| %>
+
+<% if film.errors.any? %>
+<div>
+    <h2>There is <%= pluralize(film.errors.count, 'error') %></h2>
+    <ul>
+        <% film.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+    </ul>
+</div>
+<% end %>
+
+<div>
+    <%= form.label :titre %>
+    <%= form.text_field :titre %>
+</div>
+
+<div>
+    <%= form.label :date_sortie, wrapper_html: { class: "inline_field_wrapper" } %>
+    <%= form.date_field :date_sortie %>
+</div>
+
+<div>
+    <%= form.submit %>
+</div>
+
+<% end %>
