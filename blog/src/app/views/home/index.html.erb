@@ -4,6 +4,7 @@
     <a class="p-2 text-dark" href="#">Features</a>
   </div>
   <% if user_signed_in? %>
+    <%= link_to  'Dashboard', admin_index_path, class: 'mr-4' %>
     <%= link_to  'Logout', destroy_user_session_path, method: :delete %>
   <% else %>
     <%= link_to  'Se connecter', new_user_session_path, class: 'btn btn-outline-primary mr-3' %>
