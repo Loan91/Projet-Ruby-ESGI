@@ -2,13 +2,27 @@
   <h5 class="my-0 mr-md-auto font-weight-normal">Vidéothèque</h5>
   <div class="my-2 my-md-0 mr-md-3">
     <a class="p-2 text-dark" href="#">Features</a>
-    <a class="p-2 text-dark" href="#">Enterprise</a>
-    <a class="p-2 text-dark" href="#">Support</a>
   </div>
-  <a class="btn btn-outline-primary" href="">Se connecter</a>
+  <% if user_signed_in? %>
+    <%= link_to  'Logout', destroy_user_session_path, method: :delete %>
+  <% else %>
+    <%= link_to  'Se connecter', new_user_session_path, class: 'btn btn-outline-primary mr-3' %>
+    <%= link_to  'S\'inscrire', new_user_registration_path, class: 'btn btn-outline-primary' %>
+  <% end %>
 </nav>
 
 <main>
+  <%= debug user_signed_in? %>
+  <%# hey %>
+
+  <% if user_signed_in? %>
+    Hello.
+  <% else %>
+    Not connected.
+  <% end %>
+
+
+  <%= debug current_user %>
   <h1>Les derniers ajouts</h1>
 
   <section class="my-4">

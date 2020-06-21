@@ -1,6 +1,7 @@
 class HomeController < ApplicationController
 
-    # GET /posts
+    # GET /
     def index
     end
+
 end
