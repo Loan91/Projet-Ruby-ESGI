@@ -1,0 +1,26 @@
+<h1 class="text-center mb-4">Liste de films à ajouter</h1>
+
+<table class="table">
+    <tr>
+        <th>Titre du film</th>
+        <th>Date de sortie</th>
+        <th>Action</th>
+        <%# <th>Réservé depuis</th> %>
+    </tr>
+    
+    <% @films.each do |film| %>
+    <tr>
+        <td><%= film.titre %></td>
+        <td><%= film.date_sortie %></td>
+        <td>
+            <form action="<%= videotheques_path %>" method="post">
+                <button type="submit" class="btn btn-outline-primary">Ajouter le film</button>
+                <input type="hidden" name="film_id" value="<%= film.id %>">
+                <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+            </form>
+            
+        </td>
+        <%# <td>AAAA</td> %>
+    </tr>
+    <% end %>
+</table>
