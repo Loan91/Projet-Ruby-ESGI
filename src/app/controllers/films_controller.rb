@@ -16,7 +16,7 @@ class FilmsController < ApplicationController
         @film = Film.new(film_params)
 
         if @film.save
-            redirect_to @film, notice: 'Film created'
+            redirect_to @film, notice: 'Un nouveau film a été ajouté avec succès !'
         else
             render :new
         end
@@ -27,7 +27,7 @@ class FilmsController < ApplicationController
 
     def update
         if @film.update(film_params)
-            redirect_to @film, notice: 'Film updated'
+            redirect_to @film, notice: 'Le film a été modifié avec succès !'
         else
             render :edit
         end
@@ -35,7 +35,7 @@ class FilmsController < ApplicationController
 
     def destroy
         @film.destroy
-        redirect_to films_url, notice: 'Film destroyed'
+        redirect_to films_url, notice: 'Le film a été supprimé avec succès !'
     end
 
     private
