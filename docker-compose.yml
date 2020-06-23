@@ -6,7 +6,7 @@ services:
     environment:
       - ALLOW_EMPTY_PASSWORD=yes
     ports:
-      - 3300:3306
+      - 3000:3306
 
   myapp:
     tty: true # Enables debugging capabilities when attached to this container.
