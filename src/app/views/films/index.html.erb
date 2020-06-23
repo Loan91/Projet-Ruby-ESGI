@@ -1,12 +1,7 @@
 <p><%= notice %></p>
 
 <h1 class='btn btn-danger'>Films</h1>
-<% if current_user.superadmin? %>
-  <p>Visible only for superadmins and supervisors! </p>
-<% end %>
-<% if current_user.simpleuser? %>
-  <p>Visible only for simple user and supervisors! </p>
-<% end %>
+
 <table>
     <thead>
         <tr>
