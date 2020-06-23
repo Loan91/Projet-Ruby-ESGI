@@ -1,0 +1,40 @@
+<nav class="d-flex flex-column flex-md-row align-items-center fixed-top p-3 px-md-5 mb-3 bg-white border-bottom box-shadow">
+  <h5 class="my-0 mr-md-auto font-weight-normal">Vidéothèque</h5>
+  <div class="my-2 my-md-0 mr-md-3">
+    <a class="p-2 text-dark" href="#">Features</a>
+  </div>
+  <% if user_signed_in? %>
+    <%= link_to  'Dashboard', admin_index_path, class: 'mr-4' %>
+    <%= link_to  'Logout', destroy_user_session_path, method: :delete %>
+  <% else %>
+    <%= link_to  'Se connecter', new_user_session_path, class: 'btn btn-outline-primary mr-3' %>
+    <%= link_to  'S\'inscrire', new_user_registration_path, class: 'btn btn-outline-primary' %>
+  <% end %>
+</nav>
+
+<main>
+  <%= debug user_signed_in? %>
+  <%# hey %>
+
+  <% if user_signed_in? %>
+    Hello.
+  <% else %>
+    Not connected.
+  <% end %>
+
+
+  <%= debug current_user %>
+  <h1>Les derniers ajouts</h1>
+
+  <section class="my-4">
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">Search happiness</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="card-link">John Doe</a>
+        <a href="#" class="card-link">Another link</a>
+      </div>
+    </div>
+  </section>
+</main>
