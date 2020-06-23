@@ -1,0 +1,7 @@
+<div class="container-fluid">
+    <h1>Ajout d'une nouvelle location</h1>
+    <%= @videotheques = Videotheque.all %>
+    <%= render partial: 'form', locals: {location: @location, videotheques: @videotheques} %>
+
+    <%= link_to("Revenir à la liste des locations", locations_path) %>
+</div>
