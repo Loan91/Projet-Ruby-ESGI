@@ -4,6 +4,7 @@ class CreateVideotheques < ActiveRecord::Migration[6.0]
       t.belongs_to :user
       t.belongs_to :film
       t.timestamps
+
     end
   end
 end

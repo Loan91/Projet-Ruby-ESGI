@@ -1,0 +1,25 @@
+<div class="container-fluid">
+    <h1>Gestion des films <%= link_to "Ajouter un nouveau film", new_film_path, class: 'btn btn-sm btn-success text-white' %></h1>
+
+    <div class="table-responsive mt-3">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Titre du film</th>
+                    <th>Date de sortie</th>
+                    <th colspan="3">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @locations.each do |location| %>
+                    <tr>
+                        <td><%= location.id %></td>
+                        <td><%= location.date_emprunt %></td>
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </div>
+
+</div>

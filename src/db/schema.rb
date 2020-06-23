@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_23_114917) do
+ActiveRecord::Schema.define(version: 2020_06_23_184909) do
 
   create_table "films", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.bigint "film_id"
@@ -18,6 +18,16 @@ ActiveRecord::Schema.define(version: 2020_06_23_114917) do
     t.date "date_sortie"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "locations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "videotheque_id"
+    t.date "date_emprunt"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_locations_on_user_id"
+    t.index ["videotheque_id"], name: "index_locations_on_videotheque_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
