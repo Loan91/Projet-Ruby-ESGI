@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get 'admin/index'
-  get '/videotheque', to: 'videotheque#index'
+  resources :videotheques
   root to: 'home#index'
   devise_for :users, controllers: {
       registrations: 'users/registrations'
