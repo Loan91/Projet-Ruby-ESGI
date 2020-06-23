@@ -4,6 +4,8 @@ class AdminController < ApplicationController
 
   # GET /admin/dashboard
   def dashboard
-
+    @films = Film.all
   end
+
+
 end
